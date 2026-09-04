@@ -25,6 +25,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
+# Windows consoles default to cp1252 and raise UnicodeEncodeError on the ✓/✗ glyphs
+# in our status prints — which makes a fully-successful render *look* like it crashed
+# (the PPTX is already written by then). Force UTF-8 so the final print always succeeds.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 from csv_metrics_processor import load_metrics_from_csv, export_metrics_to_csv, extract_template_tokens  # noqa: E402
 from pptx_processor import process_pptx_template  # noqa: E402
 

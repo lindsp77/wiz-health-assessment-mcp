@@ -206,7 +206,7 @@ Call once with `severity:["CRITICAL"]`, once with `severity:["HIGH"]`. Nodes ran
 |---|---|
 | `AE_HTTP` | `{protocol:["HTTP","HTTPS"], is_third_party_application:false}` |
 | `AE_NHTTP` | `{protocol:["SSH","RDP","WIN_RM","OTHER"], is_third_party_application:false}` |
-| `AE_TOT` | derived: `round(AE_HTTP/N + AE_NHTTP/N)` |
+| `AE_TOT` | derived: `round(AE_HTTP/25 + AE_NHTTP/50)` (25 / 50 are fixed scaling divisors, not tenant values) |
 | `RA_WC` | `{scan_source:["RECON"]}` (AI web-crawler endpoints) |
 
 ### 12. `list_attack_surface_findings` (read `.totalCount`) · issues · [LIVE-schema]
