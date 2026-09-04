@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+# generated decks/pdfs are regenerable AND may contain real tenant data —
+# ignore everything under output/ except the sanitized sample metrics CSV
+output/*
+!output/sample_MCP_metrics.csv
+output/*.pptx
+output/*.pdf
+
+# PowerPoint temp/lock files
+~$*
+output/live_metrics.csv
+*.local.md
+output/*.csv
+!output/sample_MCP_metrics.csv

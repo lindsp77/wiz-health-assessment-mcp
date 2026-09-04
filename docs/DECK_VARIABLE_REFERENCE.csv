@@ -1,0 +1,449 @@
+Variable,Title,Description,Slide,Category
+{{Customer}},Customer Name (alt token),Customer organization / tenant name,1,General
+{{AI_AGENTS_COUNT}},AI Agents Discovered,Active AI Agent entities,3,AI Footprint
+{{AI_CA_COUNT}},AI Coding Agents (IDEs),Developer IDEs with AI assistants,3,AI Footprint
+{{AI_CODE_REPOS_COUNT}},AI Code Repositories,VCS repositories using AI technologies,3,AI Footprint
+{{AI_DATASETS_COUNT}},AI Datasets Discovered,AI Datastores / Training sets,3,AI Footprint
+{{AI_GUARDRAILS_COUNT}},AI Guardrails Discovered,Active AI Guardrail entities,3,AI Footprint
+{{AI_MCP_SERVERS_COUNT}},MCP Servers Discovered,Model Context Protocol servers,3,AI Footprint
+{{AI_MODELS_COUNT}},AI Models Discovered,Active AI Model entities,3,AI Footprint
+{{AI_PIPELINES_COUNT}},AI Pipelines Discovered,Active AI Pipelines,3,AI Footprint
+{{AI_TECHNOLOGIES_COUNT}},AI Technologies Count,"AI libraries & frameworks (PyTorch, TensorFlow, etc.)",3,AI Footprint
+{{AI_WORKLOADS_COUNT}},AI Running Workloads,Workloads executing AI models or pipelines,3,AI Footprint
+{{CON_TOT}},Total Connected Connectors,Total connectors across all types,3,Cloud Architecture
+{{C_AWS}},AWS Accounts Count,Total connected AWS accounts,3,Cloud Architecture
+{{C_AZ}},Azure Subscriptions Count,Total connected Azure subscriptions,3,Cloud Architecture
+{{C_GCP}},GCP Projects Count,Total connected GCP projects,3,Cloud Architecture
+{{C_OTH}},Other Cloud Accounts Count,"OCI, Alibaba, etc.",3,Cloud Architecture
+{{C_OTH_NAMES}},Other Cloud Provider Names,Names of other cloud providers,3,Cloud Architecture
+{{CE_1}},Cloud Event Count #1,Matched event count for the #1 cloud-event origin,3,Cloud Events
+{{CE_10}},Cloud Event Count #10,Matched event count for the #10 cloud-event origin,3,Cloud Events
+{{CE_11}},Cloud Event Count #11,Matched event count for the #11 cloud-event origin,3,Cloud Events
+{{CE_12}},Cloud Event Count #12,Matched event count for the #12 cloud-event origin,3,Cloud Events
+{{CE_13}},Cloud Event Count #13,Matched event count for the #13 cloud-event origin,3,Cloud Events
+{{CE_2}},Cloud Event Count #2,Matched event count for the #2 cloud-event origin,3,Cloud Events
+{{CE_3}},Cloud Event Count #3,Matched event count for the #3 cloud-event origin,3,Cloud Events
+{{CE_4}},Cloud Event Count #4,Matched event count for the #4 cloud-event origin,3,Cloud Events
+{{CE_5}},Cloud Event Count #5,Matched event count for the #5 cloud-event origin,3,Cloud Events
+{{CE_6}},Cloud Event Count #6,Matched event count for the #6 cloud-event origin,3,Cloud Events
+{{CE_7}},Cloud Event Count #7,Matched event count for the #7 cloud-event origin,3,Cloud Events
+{{CE_8}},Cloud Event Count #8,Matched event count for the #8 cloud-event origin,3,Cloud Events
+{{CE_9}},Cloud Event Count #9,Matched event count for the #9 cloud-event origin,3,Cloud Events
+{{CLOUD_EVENTS_1}},Cloud Event Origin #1,Display name of the #1 cloud-event origin by volume,3,Cloud Events
+{{CLOUD_EVENTS_10}},Cloud Event Origin #10,Display name of the #10 cloud-event origin by volume,3,Cloud Events
+{{CLOUD_EVENTS_11}},Cloud Event Origin #11,Display name of the #11 cloud-event origin by volume,3,Cloud Events
+{{CLOUD_EVENTS_12}},Cloud Event Origin #12,Display name of the #12 cloud-event origin by volume,3,Cloud Events
+{{CLOUD_EVENTS_13}},Cloud Event Origin #13,Display name of the #13 cloud-event origin by volume,3,Cloud Events
+{{CLOUD_EVENTS_2}},Cloud Event Origin #2,Display name of the #2 cloud-event origin by volume,3,Cloud Events
+{{CLOUD_EVENTS_3}},Cloud Event Origin #3,Display name of the #3 cloud-event origin by volume,3,Cloud Events
+{{CLOUD_EVENTS_4}},Cloud Event Origin #4,Display name of the #4 cloud-event origin by volume,3,Cloud Events
+{{CLOUD_EVENTS_5}},Cloud Event Origin #5,Display name of the #5 cloud-event origin by volume,3,Cloud Events
+{{CLOUD_EVENTS_6}},Cloud Event Origin #6,Display name of the #6 cloud-event origin by volume,3,Cloud Events
+{{CLOUD_EVENTS_7}},Cloud Event Origin #7,Display name of the #7 cloud-event origin by volume,3,Cloud Events
+{{CLOUD_EVENTS_8}},Cloud Event Origin #8,Display name of the #8 cloud-event origin by volume,3,Cloud Events
+{{CLOUD_EVENTS_9}},Cloud Event Origin #9,Display name of the #9 cloud-event origin by volume,3,Cloud Events
+{{CON_K8S}},Kubernetes Connectors Count,Installed K8s connectors,3,Connectors & Agents
+{{CON_R}},Registry Connectors Count,Active container registry connectors,3,Connectors & Agents
+{{CON_VCS}},VCS Connectors Count,"GitHub, GitLab, Bitbucket connectors",3,Connectors & Agents
+{{CON_WOS}},Wiz Sensor Workloads,Workloads with Wiz Runtime Sensor installed,3,Connectors & Agents
+{{L_SE}},Wiz Runtime Sensors,Active Wiz Runtime Sensor instances,"3, 4",Connectors & Agents
+{{CON_BRO}},Connectors - Errored,Connectors in an error/broken state,3,Metrics
+{{CON_DIS}},Connectors - Disabled,Connectors currently disabled,3,Metrics
+{{CON_EN}},Connectors - Connected,Connectors in a healthy connected state,3,Metrics
+{{CON_NE}},Connectors - No Cloud Events,Connectors not ingesting cloud events,3,Metrics
+{{CON_WE}},Connectors - With Cloud Events,Connectors ingesting cloud events,3,Metrics
+{{OUT_DEP}},Outpost Deployments,Total Wiz Outpost deployments,3,Metrics
+{{K8S}},Kubernetes Clusters Count,Total managed & self-hosted K8s clusters,"3, 4",Workload Inventory
+{{R_TOT}},Container Registries Count,"ECR, ACR, GCR, GAR registries","3, 4",Workload Inventory
+{{SERVERLESS_CT_COUNT}},Serverless Containers Count,"Fargate, Cloud Run container instances",3,Workload Inventory
+{{SERVERLESS_FN_COUNT}},Serverless Functions Count,"Lambda, Azure Functions, Cloud Run",3,Workload Inventory
+{{CLI}},Wiz CLI Scans (30d),CI/CD (Wiz CLI) scans in the last 30 days,4,Metrics
+{{CL_ASMP}},Cloud Advanced - Advanced ASM %,Advanced ASM enabled (100) or not (0),4,Metrics
+{{CL_CP}},Cloud Advanced - Compute %,Compute workload scanning coverage (slide-4 adoption),4,Metrics
+{{CL_DP}},Cloud Advanced - Data %,DSPM data scanning coverage (slide-4 adoption),4,Metrics
+{{CL_NRVP}},Cloud Advanced - Non-OS/Registry/VM Image %,Combined non-OS/registry/VM image scan coverage,4,Metrics
+{{CL_REDA}},Cloud Advanced - Red Agent %,Red Agent enabled (100) or not (0),4,Metrics
+{{CL_SUP}},Cloud Advanced - SaaS Users %,SaaS security scanner enabled (100) or not (0),4,Metrics
+{{CL_UVMP}},Cloud Advanced - Unified Vuln Mgmt %,Share of vulnerability-assessment detections enabled,4,Metrics
+{{CL_WOP}},Cloud Advanced - WizOS %,WizOS workloads as a percent of compute workloads,4,Metrics
+{{CONTRACT_END_FMT}},Contract End Date (formatted),"Current contract end date, MM/DD/YYYY",4,Metrics
+{{CUS_NOD}},Days as Wiz Customer,Days since the tenant was created,4,Metrics
+{{D_U_R}},Days Until Renewal,Days remaining until contract renewal,4,Metrics
+{{RA_DAST}},Red Agent - DAST Attacker Findings,Open DAST Attacker findings from Red Agent,4,Metrics
+{{RA_SI}},Red Agent - Secret Impact Findings,Open Secret Impact (blast radius) findings from Red Agent,4,Metrics
+{{RA_TOTS}},Red Agent - Total Monthly Scans,Total Red Agent scans per month,4,Metrics
+{{RA_WC}},Red Agent - Web Crawler Endpoints,AI-generated API endpoints found by the Red Agent web crawler,4,Metrics
+{{TI}},Total Container Images,Total container images discovered,"4, 15",Metrics
+{{U_RES}},Unscanned/Discovered Resources,Discovered resources pending full inventory,4,Metrics
+{{WS_F}},Workload Scans Failed,Failed workload scans,4,Workload Inventory
+{{WS_P}},Workload Scan Success Ratio %,Success ratio for compute workload scans,4,Workload Inventory
+{{WS_SK}},Workload Scans Skipped,Skipped workload scans,4,Workload Inventory
+{{WS_T}},Total Compute Workload Scans,Total compute workload scans evaluated,4,Workload Inventory
+{{RCI_C}},Container Image Scan Coverage %,Coverage percentage (e.g. 16%),5,Container Image Scans
+{{RCI_F}},Container Image Failed Scans,Failed container image scans,5,Container Image Scans
+{{RCI_S}},Container Image Skipped Scans,Skipped container image scans,5,Container Image Scans
+{{RCI_T}},Container Image Total Scans,Total registry container image workload scans,5,Container Image Scans
+{{DS_AI}},AI Datastores Scanned,AI datasets / Knowledge bases,5,DSPM Breakdown
+{{DS_B}},Storage Buckets Scanned,"S3, GCS, Azure Blob buckets",5,DSPM Breakdown
+{{DS_DW}},Data Warehouses Scanned,"Snowflake, BigQuery, Redshift",5,DSPM Breakdown
+{{DS_FSS}},File System Services Scanned,"EFS, Azure Files, NetApp",5,DSPM Breakdown
+{{DS_PD}},PaaS Databases Scanned,"RDS, Cloud SQL, CosmosDB",5,DSPM Breakdown
+{{DS_VD}},Virtual Drives Scanned,"EBS, Google Persistent Disks",5,DSPM Breakdown
+{{DS_F}},DSPM Failed Scans,Failed DSPM scans,5,Data Security (DSPM) Scans
+{{DS_P}},DSPM Scan Coverage %,DSPM coverage percentage (e.g. 81%),5,Data Security (DSPM) Scans
+{{DS_SK}},DSPM Skipped Scans,Skipped DSPM scans,5,Data Security (DSPM) Scans
+{{DS_T}},DSPM Total Scans,Total DSPM data security scans,5,Data Security (DSPM) Scans
+{{NON_C}},Non-OS Disk Scan Coverage %,Coverage percentage (e.g. 35%),5,Non-OS Disk Scans
+{{NON_F}},Non-OS Disk Failed Scans,Failed Non-OS disk scans,5,Non-OS Disk Scans
+{{NON_S}},Non-OS Disk Skipped Scans,Skipped Non-OS disk scans,5,Non-OS Disk Scans
+{{NON_T}},Non-OS Disk Total Scans,Total Non-OS disk scans evaluated,5,Non-OS Disk Scans
+{{SHI_C}},Open Critical SHIs,Open Critical System Health Issues,5,System Health
+{{SHI_H}},Open High SHIs,Open High System Health Issues,5,System Health
+{{SHI_R_C}},Resolved Critical SHIs (30d),Resolved Critical SHIs in past 30 days,5,System Health
+{{SHI_R_H}},Resolved High SHIs (30d),Resolved High SHIs in past 30 days,5,System Health
+{{SHI_B}},SHI - Brokers & CLI,Open Crit+High SHIs on Brokers / CLI,5,System Health Breakdown
+{{SHI_CC}},SHI - Cloud Connectors,Open Crit+High SHIs on Cloud Connectors,5,System Health Breakdown
+{{SHI_I}},SHI - Integrations & Service Accounts,Open Crit+High SHIs on Integrations,5,System Health Breakdown
+{{SHI_KC}},SHI - Kubernetes Connectors,Open Crit+High SHIs on K8s Connectors,5,System Health Breakdown
+{{SHI_O}},SHI - Outposts & Outpost Clusters,Open Crit+High SHIs on Outposts,5,System Health Breakdown
+{{SHI_RC}},SHI - Registry Connectors,Open Crit+High SHIs on Container Registries,5,System Health Breakdown
+{{SHI_VCS}},SHI - VCS & CI/CD Connectors,Open Crit+High SHIs on Version Control,5,System Health Breakdown
+{{VMI_C}},VM Image Scan Coverage %,Coverage percentage (e.g. 0%),5,VM Image Scans
+{{VMI_F}},VM Image Failed Scans,Failed VM image scans,5,VM Image Scans
+{{VMI_S}},VM Image Skipped Scans,Skipped VM image scans,5,VM Image Scans
+{{VMI_T}},VM Image Total Scans,Total VM image workload scans,5,VM Image Scans
+{{F_AR}},Automation Rules (On / Off),Automation rules enabled vs disabled,6,Adoption & Governance
+{{F_BA}},Blue Agent Enabled,Whether the Wiz Blue Agent is enabled,"6, 13",Adoption & Governance
+{{F_BE}},Using Wiz Browser Extension,Distinct users of the Wiz AI browser extension,6,Adoption & Governance
+{{F_DR}},Service Catalog Discovery Rules,Application/service discovery rules configured,6,Adoption & Governance
+{{F_FW}},Custom Compliance Frameworks,Count of user-created custom compliance frameworks enabled,6,Adoption & Governance
+{{F_GA}},Green Agent Enabled,Whether the Wiz Green Agent (WizOS) is enabled,"6, 13",Adoption & Governance
+{{F_IR}},Inventory Management Rules,User-created inventory management rules,6,Adoption & Governance
+{{F_MM}},User Created Monitored Metrics,Custom monitored metrics created by the customer,6,Adoption & Governance
+{{F_PP}},User Created Posture Policies,Custom posture policies created by the customer,6,Adoption & Governance
+{{F_RA}},Red Agent Enabled,Whether the Wiz Red Agent (offensive) is enabled,"6, 13",Adoption & Governance
+{{F_TR}},Resource Tag Rules (On / Off),Resource tagging rules enabled vs disabled,6,Adoption & Governance
+{{F_WF}},Automation Workflows,Automation workflows enabled vs disabled,6,Adoption & Governance
+{{F_WMCP}},Wiz MCP Users,Distinct users of the Wiz MCP integration,6,Adoption & Governance
+{{IA_1}},Integration #1 Name,Name of the #1 most-recently-active integration,6,Integrations Activity
+{{IA_10}},Integration #10 Name,Name of the #10 most-recently-active integration,6,Integrations Activity
+{{IA_2}},Integration #2 Name,Name of the #2 most-recently-active integration,6,Integrations Activity
+{{IA_3}},Integration #3 Name,Name of the #3 most-recently-active integration,6,Integrations Activity
+{{IA_4}},Integration #4 Name,Name of the #4 most-recently-active integration,6,Integrations Activity
+{{IA_5}},Integration #5 Name,Name of the #5 most-recently-active integration,6,Integrations Activity
+{{IA_6}},Integration #6 Name,Name of the #6 most-recently-active integration,6,Integrations Activity
+{{IA_7}},Integration #7 Name,Name of the #7 most-recently-active integration,6,Integrations Activity
+{{IA_8}},Integration #8 Name,Name of the #8 most-recently-active integration,6,Integrations Activity
+{{IA_9}},Integration #9 Name,Name of the #9 most-recently-active integration,6,Integrations Activity
+{{IR_1}},Integration #1 Last Activity,Last activity/tested date for integration #1,6,Integrations Activity
+{{IR_10}},Integration #10 Last Activity,Last activity/tested date for integration #10,6,Integrations Activity
+{{IR_2}},Integration #2 Last Activity,Last activity/tested date for integration #2,6,Integrations Activity
+{{IR_3}},Integration #3 Last Activity,Last activity/tested date for integration #3,6,Integrations Activity
+{{IR_4}},Integration #4 Last Activity,Last activity/tested date for integration #4,6,Integrations Activity
+{{IR_5}},Integration #5 Last Activity,Last activity/tested date for integration #5,6,Integrations Activity
+{{IR_6}},Integration #6 Last Activity,Last activity/tested date for integration #6,6,Integrations Activity
+{{IR_7}},Integration #7 Last Activity,Last activity/tested date for integration #7,6,Integrations Activity
+{{IR_8}},Integration #8 Last Activity,Last activity/tested date for integration #8,6,Integrations Activity
+{{IR_9}},Integration #9 Last Activity,Last activity/tested date for integration #9,6,Integrations Activity
+{{KC_AC}},Clusters with Admission Controller,Clusters with admission controller webhook,6,Kubernetes
+{{KC_WC}},Clusters with Connector Deployed,Clusters with active Wiz K8s connector,6,Kubernetes
+{{KG_NA}},Clusters Missing Audit Log Ingestion,Missing audit log ingestion,6,Kubernetes Gaps
+{{KG_NC}},Clusters Missing Connector,Unmanaged / unmonitored clusters,6,Kubernetes Gaps
+{{KG_NS}},Clusters Missing Runtime Sensor,Missing runtime threat detection,6,Kubernetes Gaps
+{{CC_TOT}},Champion Center Items,Total Champion Center journey items for the tenant,6,Metrics
+{{PC_TOT}},Sub-Projects (non-root),Projects excluding the root project,6,Metrics
+{{P_HBI}},High Business Impact Projects,Projects tagged High Business Impact,6,Metrics
+{{P_LBI}},Low Business Impact Projects,Projects tagged Low Business Impact,6,Metrics
+{{P_MBI}},Medium Business Impact Projects,Projects tagged Medium Business Impact,6,Metrics
+{{P_TOT}},Total Projects,Total projects in the tenant,6,Metrics
+{{U_ACT}},Active Users (30d),Users who logged in within the last 30 days,6,Metrics
+{{U_ENG}},User Engagement %,Active users as a percentage of total users,6,Metrics
+{{U_TOT}},Total Users,Total non-deleted portal users,6,Metrics
+{{ALL_NON_BILLABLE_PREVIEW}},All Non-Billable Public Previews,Bullet list of all non-billable public-preview features enabled,7,Preview Hub
+{{BILLABLE_ADVANCED}},Billable Public Previews - Advanced,Billable public-preview features enabled under the Advanced tier,7,Preview Hub
+{{BILLABLE_CODE}},Billable Public Previews - Code,Billable public-preview features enabled under the Code tier,7,Preview Hub
+{{BILLABLE_DEFEND}},Billable Public Previews - Defend,Billable public-preview features enabled under the Defend tier,7,Preview Hub
+{{BILLABLE_SENSOR}},Billable Public Previews - Sensor,Billable public-preview features enabled under the Sensor tier,7,Preview Hub
+{{PRIVATE_BILLABLE}},Billable Private Previews,Bullet list of billable private-preview features enabled,8,Preview Hub
+{{PRIVATE_NON_BILLABLE}},Non-Billable Private Previews,Bullet list of non-billable private-preview features enabled,8,Preview Hub
+{{ROADMAP_TRACKER}},Tracked Roadmap Items,Formatted list of tracked roadmap items,9,Metrics
+{{AE_TOT}},ASM Estimated Workloads,Calculated ASM compute workload units,11,Attack Surface Management
+{{CI_CBC_1}},Top Critical Control 1 Count,Issue count for top critical control 1,11,Top Controls
+{{CI_CBC_2}},Top Critical Control 2 Count,Issue count for top critical control 2,11,Top Controls
+{{CI_CBC_3}},Top Critical Control 3 Count,Issue count for top critical control 3,11,Top Controls
+{{CI_CONTROL_1}},Top Critical Control 1 Name,Control with most critical issues,11,Top Controls
+{{CI_CONTROL_2}},Top Critical Control 2 Name,Control with second most critical issues,11,Top Controls
+{{CI_CONTROL_3}},Top Critical Control 3 Name,Control with third most critical issues,11,Top Controls
+{{HI_CBC_1}},Top High Control 1 Count,Issue count for top high control 1,11,Top Controls
+{{HI_CBC_2}},Top High Control 2 Count,Issue count for top high control 2,11,Top Controls
+{{HI_CBC_3}},Top High Control 3 Count,Issue count for top high control 3,11,Top Controls
+{{HI_CONTROL_1}},Top High Control 1 Name,Control with most high issues,11,Top Controls
+{{HI_CONTROL_2}},Top High Control 2 Name,Control with second most high issues,11,Top Controls
+{{HI_CONTROL_3}},Top High Control 3 Name,Control with third most high issues,11,Top Controls
+{{AI_IF}},AI Inventory Findings Count,Inventory findings for AI models & MCP servers,12,AI Security Findings
+{{AI_MF}},AI Misconfiguration Findings Count,Configuration findings for AI framework (wct-id-1998),12,AI Security Findings
+{{AI_SF}},AI Security Findings Count,Active AI security posture findings,12,AI Security Findings
+{{OC}},Open Critical Issues,Total active critical severity issues,12,Security Posture
+{{OH}},Open High Issues,Total active high severity issues,12,Security Posture
+{{RC}},Resolved Critical Issues (90d),Resolved critical issues in past 90 days,12,Security Posture
+{{RH}},Resolved High Issues (90d),Resolved high issues in past 90 days,12,Security Posture
+{{RJ}},Ignored Issues Count,Total issues in rejected / ignored status,12,Security Posture
+{{SG}},Security Score Gap,Gap between current score and benchmark (%),12,Security Posture
+{{SP}},Industry Benchmark Score,Peer benchmark security score (%),12,Security Posture
+{{SS}},Current Security Score,Wiz Security Score (0-100%),12,Security Posture
+{{SS_I}},Industry Benchmark Name,"e.g. Technology, Financial Services, Healthcare",12,Security Posture
+{{s1d}},90-Day Security Score Trend,Score change (+/- %),12,Security Posture
+{{AVG_AGEC}},Critical Issues Average Age,Average age of open critical issues (days),12,Threats & Runtime
+{{AVG_AGEH}},High Issues Average Age,Average age of open high issues (days),12,Threats & Runtime
+{{MTTR_O}},Mean Time to Remediate (MTTR),Average MTTR in days for criticals/threats,12,Threats & Runtime
+{{OT}},Open Threats Count,Open runtime threat detections,12,Threats & Runtime
+{{RT}},Resolved Threats Count (90d),Resolved threats in past 90 days,12,Threats & Runtime
+{{AE_HTTP}},HTTP/HTTPS App Endpoints,Application endpoints on HTTP/HTTPS protocols,13,Metrics
+{{AE_NHTTP}},Non-HTTP App Endpoints,Application endpoints on non-HTTP protocols,13,Metrics
+{{L_CL_PCT}},Container Lifecycle Coverage %,Container lifecycle scanning coverage,14,Licenses
+{{L_CO}},Wiz Code License,Active / Inactive,14,Licenses
+{{L_DE}},Wiz Defend License,Active / Inactive,14,Licenses
+{{RC_1}},Registry Type #1 Count,Registry count for the #1 registry type,15,Container Registries
+{{RC_2}},Registry Type #2 Count,Registry count for the #2 registry type,15,Container Registries
+{{RC_3}},Registry Type #3 Count,Registry count for the #3 registry type,15,Container Registries
+{{RC_4}},Registry Type #4 Count,Registry count for the #4 registry type,15,Container Registries
+{{RC_5}},Registry Type #5 Count,Registry count for the #5 registry type,15,Container Registries
+{{RC_6}},Registry Type #6 Count,Registry count for the #6 registry type,15,Container Registries
+{{R_1}},Registry Type #1,#1 container registry type by count (ECR/ACR/GAR/etc.),15,Container Registries
+{{R_2}},Registry Type #2,#2 container registry type by count (ECR/ACR/GAR/etc.),15,Container Registries
+{{R_3}},Registry Type #3,#3 container registry type by count (ECR/ACR/GAR/etc.),15,Container Registries
+{{R_4}},Registry Type #4,#4 container registry type by count (ECR/ACR/GAR/etc.),15,Container Registries
+{{R_5}},Registry Type #5,#5 container registry type by count (ECR/ACR/GAR/etc.),15,Container Registries
+{{R_6}},Registry Type #6,#6 container registry type by count (ECR/ACR/GAR/etc.),15,Container Registries
+{{K8C_1}},K8s Distribution #1 Count,Cluster count for the #1 Kubernetes distribution,15,Kubernetes
+{{K8C_2}},K8s Distribution #2 Count,Cluster count for the #2 Kubernetes distribution,15,Kubernetes
+{{K8C_3}},K8s Distribution #3 Count,Cluster count for the #3 Kubernetes distribution,15,Kubernetes
+{{K8C_4}},K8s Distribution #4 Count,Cluster count for the #4 Kubernetes distribution,15,Kubernetes
+{{K8C_5}},K8s Distribution #5 Count,Cluster count for the #5 Kubernetes distribution,15,Kubernetes
+{{K8S_1}},K8s Distribution #1,#1 Kubernetes distribution by cluster count (EKS/AKS/GKE/etc.),15,Kubernetes
+{{K8S_2}},K8s Distribution #2,#2 Kubernetes distribution by cluster count (EKS/AKS/GKE/etc.),15,Kubernetes
+{{K8S_3}},K8s Distribution #3,#3 Kubernetes distribution by cluster count (EKS/AKS/GKE/etc.),15,Kubernetes
+{{K8S_4}},K8s Distribution #4,#4 Kubernetes distribution by cluster count (EKS/AKS/GKE/etc.),15,Kubernetes
+{{K8S_5}},K8s Distribution #5,#5 Kubernetes distribution by cluster count (EKS/AKS/GKE/etc.),15,Kubernetes
+{{CL_BLD}},Container Images - Build Stage,Container images detected at the Build lifecycle stage,15,Metrics
+{{CL_CLD}},Container Images - Cloud Stage,Container images detected at the Cloud (running) lifecycle stage,15,Metrics
+{{CL_CODE}},Container Images - Code Stage,Container images detected at the Code lifecycle stage,15,Metrics
+{{CL_DEP}},Container Images - Deploy Stage,Container images detected at the Deploy lifecycle stage,15,Metrics
+{{CL_RT}},Container Images - Runtime Stage,Container images detected at the Runtime lifecycle stage,15,Metrics
+{{CL_STR}},Container Images - Registry/Store Stage,Container images detected in registries (Store stage),15,Metrics
+{{K8C_OTH}},K8s Clusters - Other Distributions,Cluster count outside the top 5 distributions,15,Metrics
+{{K8C_TOT}},Kubernetes Clusters Total,Total Kubernetes clusters discovered,15,Metrics
+{{KC_CLI}},K8s Clusters w/ Sensor,Clusters with a Wiz sensor group installed,15,Metrics
+{{KC_SE}},K8s Clusters w/ Audit Log Collector,Clusters with the Kubernetes audit log collector,15,Metrics
+{{KG_IA}},K8s Clusters Internet-Exposed,Kubernetes clusters accessible from the internet,15,Metrics
+{{R_AUT}},Registries - Auto-scanned,Container registries with automatic scanning,15,Metrics
+{{R_CON}},Registries - Connector-based,Container registries scanned via a connector,15,Metrics
+{{R_CUS}},Registries - Custom,Container registries with custom scanning configuration,15,Metrics
+{{ASM_API}},Advanced Scan Source: API Security,ASM setting: Advanced Scan Source: API Security,17,Attack Surface Management
+{{ASM_API_R}},Advanced Scan Source: API Security - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Advanced Scan Source: API Security,17,Attack Surface Management
+{{ASM_CODE}},Advanced Scan Source: Code,ASM setting: Advanced Scan Source: Code,17,Attack Surface Management
+{{ASM_CODE_R}},Advanced Scan Source: Code - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Advanced Scan Source: Code,17,Attack Surface Management
+{{ASM_CRED}},Rules: Default Credentials Detection,ASM setting: Rules: Default Credentials Detection,17,Attack Surface Management
+{{ASM_CRED_R}},Rules: Default Credentials Detection - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Rules: Default Credentials Detection,17,Attack Surface Management
+{{ASM_CUST}},Advanced Scan Source: Custom Targets,ASM setting: Advanced Scan Source: Custom Targets,17,Attack Surface Management
+{{ASM_CUST_R}},Advanced Scan Source: Custom Targets - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Advanced Scan Source: Custom Targets,17,Attack Surface Management
+{{ASM_DAST}},Rules: DAST,ASM setting: Rules: DAST,17,Attack Surface Management
+{{ASM_DAST_R}},Rules: DAST - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Rules: DAST,17,Attack Surface Management
+{{ASM_DATA}},Risk: Sensitive Data Findings Detection,ASM setting: Risk: Sensitive Data Findings Detection,17,Attack Surface Management
+{{ASM_DATA_R}},Risk: Sensitive Data Findings Detection - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Risk: Sensitive Data Findings Detection,17,Attack Surface Management
+{{ASM_EAR}},Rules: Early Access Rules,ASM setting: Rules: Early Access Rules,17,Attack Surface Management
+{{ASM_EAR_R}},Rules: Early Access Rules - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Rules: Early Access Rules,17,Attack Surface Management
+{{ASM_EXPL}},Application Endpoint Exposure Level,ASM setting: Application Endpoint Exposure Level,17,Attack Surface Management
+{{ASM_EXPL_R}},Application Endpoint Exposure Level - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Application Endpoint Exposure Level,17,Attack Surface Management
+{{ASM_HPT}},Rules: High-Profile Threat Detection,ASM setting: Rules: High-Profile Threat Detection,17,Attack Surface Management
+{{ASM_HPT_R}},Rules: High-Profile Threat Detection - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Rules: High-Profile Threat Detection,17,Attack Surface Management
+{{ASM_MISC}},Rules: Misconfiguration Detection,ASM setting: Rules: Misconfiguration Detection,17,Attack Surface Management
+{{ASM_MISC_R}},Rules: Misconfiguration Detection - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Rules: Misconfiguration Detection,17,Attack Surface Management
+{{ASM_MODE}},Scanner Mode (Basic/Advanced),ASM setting: Scanner Mode (Basic/Advanced),17,Attack Surface Management
+{{ASM_MODE_R}},Scanner Mode (Basic/Advanced) - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Scanner Mode (Basic/Advanced),17,Attack Surface Management
+{{ASM_RECON}},Advanced Scan Source: Reconnaissance,ASM setting: Advanced Scan Source: Reconnaissance,17,Attack Surface Management
+{{ASM_RECON_R}},Advanced Scan Source: Reconnaissance - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Advanced Scan Source: Reconnaissance,17,Attack Surface Management
+{{ASM_RS}},Advanced Scan Source: Runtime Sensor,ASM setting: Advanced Scan Source: Runtime Sensor,17,Attack Surface Management
+{{ASM_RS_R}},Advanced Scan Source: Runtime Sensor - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Advanced Scan Source: Runtime Sensor,17,Attack Surface Management
+{{ASM_SAAS}},Advanced Scan Source: SaaS,ASM setting: Advanced Scan Source: SaaS,17,Attack Surface Management
+{{ASM_SASS_R}},Advanced Scan Source: SaaS - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Advanced Scan Source: SaaS,17,Attack Surface Management
+{{ASM_SEC}},Risk: Secret Findings Detection,ASM setting: Risk: Secret Findings Detection,17,Attack Surface Management
+{{ASM_SEC_R}},Risk: Secret Findings Detection - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Risk: Secret Findings Detection,17,Attack Surface Management
+{{ASM_SV}},Risk: Secret Validation,ASM setting: Risk: Secret Validation,17,Attack Surface Management
+{{ASM_SV_R}},Risk: Secret Validation - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Risk: Secret Validation,17,Attack Surface Management
+{{ASM_VEXP}},Rules: Vulnerability Exploitability,ASM setting: Rules: Vulnerability Exploitability,17,Attack Surface Management
+{{ASM_VEXP_R}},Rules: Vulnerability Exploitability - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Rules: Vulnerability Exploitability,17,Attack Surface Management
+{{ASM_VULN}},Risk: Vulnerability Assessment,ASM setting: Risk: Vulnerability Assessment,17,Attack Surface Management
+{{ASM_VULN_R}},Risk: Vulnerability Assessment - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Risk: Vulnerability Assessment,17,Attack Surface Management
+{{WS_ADE1}},ADE Private Endpoints (Disabled Public),Workload scanner setting: ADE Private Endpoints (Disabled Public),17,Workload Scanner Config
+{{WS_ADE1_R}},ADE Private Endpoints (Disabled Public) - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: ADE Private Endpoints (Disabled Public),17,Workload Scanner Config
+{{WS_ADE2}},ADE Private Endpoints (Selected VNets),Workload scanner setting: ADE Private Endpoints (Selected VNets),17,Workload Scanner Config
+{{WS_ADE2_R}},ADE Private Endpoints (Selected VNets) - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: ADE Private Endpoints (Selected VNets),17,Workload Scanner Config
+{{WS_AFIM}},Agentless File Integrity Monitoring,Workload scanner setting: Agentless File Integrity Monitoring,17,Workload Scanner Config
+{{WS_AFIM_R}},Agentless File Integrity Monitoring - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Agentless File Integrity Monitoring,17,Workload Scanner Config
+{{WS_CIGS}},Compute Instance Group Sampling,Workload scanner setting: Compute Instance Group Sampling,17,Workload Scanner Config
+{{WS_CIGS_R}},Compute Instance Group Sampling - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Compute Instance Group Sampling,17,Workload Scanner Config
+{{WS_CMK}},Shared AWS CMKs,Workload scanner setting: Shared AWS CMKs,17,Workload Scanner Config
+{{WS_CMK_R}},Shared AWS CMKs - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Shared AWS CMKs,17,Workload Scanner Config
+{{WS_EXCL}},Workload Scanning Exclusions,Workload scanner setting: Workload Scanning Exclusions,17,Workload Scanner Config
+{{WS_EXCL_R}},Workload Scanning Exclusions - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Workload Scanning Exclusions,17,Workload Scanner Config
+{{WS_LAMB}},AWS Lambda Version Scanning,Workload scanner setting: AWS Lambda Version Scanning,17,Workload Scanner Config
+{{WS_LAMB_R}},AWS Lambda Version Scanning - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: AWS Lambda Version Scanning,17,Workload Scanner Config
+{{WS_LSAIL}},AWS LightSail Scanning,Workload scanner setting: AWS LightSail Scanning,17,Workload Scanner Config
+{{WS_LSAIL_R}},AWS LightSail Scanning - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: AWS LightSail Scanning,17,Workload Scanner Config
+{{WS_NONOS}},Scanning Non-OS Disks,Workload scanner setting: Scanning Non-OS Disks,17,Workload Scanner Config
+{{WS_NONOS_R}},Scanning Non-OS Disks - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Scanning Non-OS Disks,17,Workload Scanner Config
+{{WS_NRT}},Near Real-Time Scanning,Workload scanner setting: Near Real-Time Scanning,17,Workload Scanner Config
+{{WS_NRTW}},Include NRT Workload Scanning,Workload scanner setting: Include NRT Workload Scanning,17,Workload Scanner Config
+{{WS_NRTW_R}},Include NRT Workload Scanning - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Include NRT Workload Scanning,17,Workload Scanner Config
+{{WS_NRT_R}},Near Real-Time Scanning - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Near Real-Time Scanning,17,Workload Scanner Config
+{{WS_TAGS}},Custom Scanner Tags,Workload scanner setting: Custom Scanner Tags,17,Workload Scanner Config
+{{WS_TAGS_R}},Custom Scanner Tags - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Custom Scanner Tags,17,Workload Scanner Config
+{{WS_TVOL}},AWS Scanning via Temp Volumes,Workload scanner setting: AWS Scanning via Temp Volumes,17,Workload Scanner Config
+{{WS_TVOL_R}},AWS Scanning via Temp Volumes - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: AWS Scanning via Temp Volumes,17,Workload Scanner Config
+{{WS_VM}},Virtual Machine Scanning,Workload scanner setting: Virtual Machine Scanning,17,Workload Scanner Config
+{{WS_VM_R}},Virtual Machine Scanning - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Virtual Machine Scanning,17,Workload Scanner Config
+{{DSS_AIAO}},Azure OpenAI,Data security scanner coverage: Azure OpenAI,18,Data Security Scanner Config
+{{DSS_AIAO_R}},Azure OpenAI - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Azure OpenAI,18,Data Security Scanner Config
+{{DSS_AIOA}},OpenAI,Data security scanner coverage: OpenAI,18,Data Security Scanner Config
+{{DSS_AIOA_R}},OpenAI - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: OpenAI,18,Data Security Scanner Config
+{{DSS_AIV}},Vertex AI,Data security scanner coverage: Vertex AI,18,Data Security Scanner Config
+{{DSS_AIV_R}},Vertex AI - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Vertex AI,18,Data Security Scanner Config
+{{DSS_AZ1}},Storage: Azure Private Endpoints (Disabled Public),Data security scanner coverage: Storage: Azure Private Endpoints (Disabled Public),18,Data Security Scanner Config
+{{DSS_AZ1_R}},Storage: Azure Private Endpoints (Disabled Public) - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Storage: Azure Private Endpoints (Disabled Public),18,Data Security Scanner Config
+{{DSS_AZ2}},Storage: Azure Private Endpoints (Selected VNets),Data security scanner coverage: Storage: Azure Private Endpoints (Selected VNets),18,Data Security Scanner Config
+{{DSS_AZ2_R}},Storage: Azure Private Endpoints (Selected VNets) - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Storage: Azure Private Endpoints (Selected VNets),18,Data Security Scanner Config
+{{DSS_BQ}},Google BigQuery,Data security scanner coverage: Google BigQuery,18,Data Security Scanner Config
+{{DSS_BQ_R}},Google BigQuery - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Google BigQuery,18,Data Security Scanner Config
+{{DSS_BUCK}},Buckets (Public & Private),Data security scanner coverage: Buckets (Public & Private),18,Data Security Scanner Config
+{{DSS_BUCK_R}},Buckets (Public & Private) - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Buckets (Public & Private),18,Data Security Scanner Config
+{{DSS_CDBAZ1}},CosmosDB: Azure Private Endpoints (Disabled Public),Data security scanner coverage: CosmosDB: Azure Private Endpoints (Disabled Public),18,Data Security Scanner Config
+{{DSS_CDBAZ1_R}},CosmosDB: Azure Private Endpoints (Disabled Public) - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: CosmosDB: Azure Private Endpoints (Disabled Public),18,Data Security Scanner Config
+{{DSS_CDBAZ2}},CosmosDB: Azure Private Endpoints (Selected VNets),Data security scanner coverage: CosmosDB: Azure Private Endpoints (Selected VNets),18,Data Security Scanner Config
+{{DSS_CDBAZ2_R}},CosmosDB: Azure Private Endpoints (Selected VNets) - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: CosmosDB: Azure Private Endpoints (Selected VNets),18,Data Security Scanner Config
+{{DSS_DDB}},Amazon DynamoDB,Data security scanner coverage: Amazon DynamoDB,18,Data Security Scanner Config
+{{DSS_DDB_R}},Amazon DynamoDB - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Amazon DynamoDB,18,Data Security Scanner Config
+{{DSS_DW}},Data Warehouses,Data security scanner coverage: Data Warehouses,18,Data Security Scanner Config
+{{DSS_DW_R}},Data Warehouses - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Data Warehouses,18,Data Security Scanner Config
+{{DSS_IAAS}},Hosted Databases (IaaS),Data security scanner coverage: Hosted Databases (IaaS),18,Data Security Scanner Config
+{{DSS_IAAS_R}},Hosted Databases (IaaS) - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Hosted Databases (IaaS),18,Data Security Scanner Config
+{{DSS_ON}},Data Security Scanner (master toggle),Data security scanner coverage: Data Security Scanner (master toggle),18,Data Security Scanner Config
+{{DSS_ON_R}},Data Security Scanner (master toggle) - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Data Security Scanner (master toggle),18,Data Security Scanner Config
+{{DSS_PAAS}},Cloud Managed Databases (PaaS),Data security scanner coverage: Cloud Managed Databases (PaaS),18,Data Security Scanner Config
+{{DSS_PAAS_R}},Cloud Managed Databases (PaaS) - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Cloud Managed Databases (PaaS),18,Data Security Scanner Config
+{{DSS_SHAD}},Shadow Data,Data security scanner coverage: Shadow Data,18,Data Security Scanner Config
+{{DSS_SHAD_R}},Shadow Data - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Shadow Data,18,Data Security Scanner Config
+{{DSS_SLS}},Serverless Functions,Data security scanner coverage: Serverless Functions,18,Data Security Scanner Config
+{{DSS_SLS_R}},Serverless Functions - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Serverless Functions,18,Data Security Scanner Config
+{{DSS_SNOW}},Snowflake,Data security scanner coverage: Snowflake,18,Data Security Scanner Config
+{{DSS_SNOW_R}},Snowflake - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Snowflake,18,Data Security Scanner Config
+{{DSS_VDRV}},Virtual Drives,Data security scanner coverage: Virtual Drives,18,Data Security Scanner Config
+{{DSS_VDRV_R}},Virtual Drives - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Virtual Drives,18,Data Security Scanner Config
+{{DSS_VMD}},VM Disks (OS and non-OS),Data security scanner coverage: VM Disks (OS and non-OS),18,Data Security Scanner Config
+{{DSS_VMD_R}},VM Disks (OS and non-OS) - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: VM Disks (OS and non-OS),18,Data Security Scanner Config
+{{VS_ARTIF}},Artifacts (lifecycle stages),Lifecycle stages where build artifacts are analyzed,18,Vulnerability Scanner Config
+{{VS_ARTIF_R}},Artifacts (lifecycle stages) - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Artifacts (lifecycle stages),18,Vulnerability Scanner Config
+{{VS_EOL}},End of Life Detection,End-of-life technology detection status/window,18,Vulnerability Scanner Config
+{{VS_EOL_R}},End of Life Detection - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: End of Life Detection,18,Vulnerability Scanner Config
+{{VS_EXCL}},Code Library Exclusion Paths (Legacy),Whether legacy code-library exclusion paths are enabled,18,Vulnerability Scanner Config
+{{VS_EXCL_R}},Code Library Exclusion Paths (Legacy) - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Code Library Exclusion Paths (Legacy),18,Vulnerability Scanner Config
+{{VS_GOSTD}},Go Standard Library,Whether Go standard library vulns are detected,18,Vulnerability Scanner Config
+{{VS_GOSTD_R}},Go Standard Library - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Go Standard Library,18,Vulnerability Scanner Config
+{{VS_GRADL}},Dependency Scopes: Gradle,Gradle dependency scopes analyzed,18,Vulnerability Scanner Config
+{{VS_GRADL_R}},Dependency Scopes: Gradle - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Dependency Scopes: Gradle,18,Vulnerability Scanner Config
+{{VS_JSDEP}},Dependency Scopes: JS (npm/pnpm/Yarn),JS (npm/pnpm/Yarn) dependency scopes analyzed,18,Vulnerability Scanner Config
+{{VS_JSDEP_R}},Dependency Scopes: JS (npm/pnpm/Yarn) - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Dependency Scopes: JS (npm/pnpm/Yarn),18,Vulnerability Scanner Config
+{{VS_LOCK}},Lock Files (lifecycle stages),Lifecycle stages where lock files are analyzed,18,Vulnerability Scanner Config
+{{VS_LOCK_R}},Lock Files (lifecycle stages) - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Lock Files (lifecycle stages),18,Vulnerability Scanner Config
+{{VS_LVULN}},Linux Vulnerabilities,Whether latest-kernel Linux vulnerabilities are detected,18,Vulnerability Scanner Config
+{{VS_LVULN_R}},Linux Vulnerabilities - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Linux Vulnerabilities,18,Vulnerability Scanner Config
+{{VS_MANIF}},Manifest Files (lifecycle stages),Lifecycle stages where manifest files are analyzed,18,Vulnerability Scanner Config
+{{VS_MANIF_R}},Manifest Files (lifecycle stages) - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Manifest Files (lifecycle stages),18,Vulnerability Scanner Config
+{{VS_MAVEN}},Dependency Scopes: Maven,Maven dependency scopes analyzed,18,Vulnerability Scanner Config
+{{VS_MAVEN_R}},Dependency Scopes: Maven - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Dependency Scopes: Maven,18,Vulnerability Scanner Config
+{{VS_OSPKG}},OS-Package Managed Code Libraries,Whether OS-package managed code library vulns are detected,18,Vulnerability Scanner Config
+{{VS_OSPKG_R}},OS-Package Managed Code Libraries - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: OS-Package Managed Code Libraries,18,Vulnerability Scanner Config
+{{VS_RHOS}},Ignore Red Hat OpenShift Vulns,Whether Red Hat OpenShift container library vulns are ignored,18,Vulnerability Scanner Config
+{{VS_RHOS_R}},Ignore Red Hat OpenShift Vulns - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Ignore Red Hat OpenShift Vulns,18,Vulnerability Scanner Config
+{{VS_WINB}},Windows App Bundled Libraries,Whether Windows app bundled library vulns are detected,18,Vulnerability Scanner Config
+{{VS_WINB_R}},Windows App Bundled Libraries - Recommendation,Best-practice indicator (✓ aligned / ✗ revisit / N/A) for: Windows App Bundled Libraries,18,Vulnerability Scanner Config
+{{PI_T1_1}},Tier 1 Potential Integration #1 Name,Technology name of tier 1 potential integration #1 (by service-account activity),19,Potential Integrations
+{{PI_T1_1_FA}},Tier 1 Potential Integration #1 First Seen,First-added date for tier 1 potential integration #1,19,Potential Integrations
+{{PI_T1_1_LA}},Tier 1 Potential Integration #1 Last Seen,Latest-added date for tier 1 potential integration #1,19,Potential Integrations
+{{PI_T1_1_SA}},Tier 1 Potential Integration #1 Service Accounts,Service-account count for tier 1 potential integration #1,19,Potential Integrations
+{{PI_T1_2}},Tier 1 Potential Integration #2 Name,Technology name of tier 1 potential integration #2 (by service-account activity),19,Potential Integrations
+{{PI_T1_2_FA}},Tier 1 Potential Integration #2 First Seen,First-added date for tier 1 potential integration #2,19,Potential Integrations
+{{PI_T1_2_LA}},Tier 1 Potential Integration #2 Last Seen,Latest-added date for tier 1 potential integration #2,19,Potential Integrations
+{{PI_T1_2_SA}},Tier 1 Potential Integration #2 Service Accounts,Service-account count for tier 1 potential integration #2,19,Potential Integrations
+{{PI_T1_3}},Tier 1 Potential Integration #3 Name,Technology name of tier 1 potential integration #3 (by service-account activity),19,Potential Integrations
+{{PI_T1_3_FA}},Tier 1 Potential Integration #3 First Seen,First-added date for tier 1 potential integration #3,19,Potential Integrations
+{{PI_T1_3_LA}},Tier 1 Potential Integration #3 Last Seen,Latest-added date for tier 1 potential integration #3,19,Potential Integrations
+{{PI_T1_3_SA}},Tier 1 Potential Integration #3 Service Accounts,Service-account count for tier 1 potential integration #3,19,Potential Integrations
+{{PI_T1_4}},Tier 1 Potential Integration #4 Name,Technology name of tier 1 potential integration #4 (by service-account activity),19,Potential Integrations
+{{PI_T1_4_FA}},Tier 1 Potential Integration #4 First Seen,First-added date for tier 1 potential integration #4,19,Potential Integrations
+{{PI_T1_4_LA}},Tier 1 Potential Integration #4 Last Seen,Latest-added date for tier 1 potential integration #4,19,Potential Integrations
+{{PI_T1_4_SA}},Tier 1 Potential Integration #4 Service Accounts,Service-account count for tier 1 potential integration #4,19,Potential Integrations
+{{PI_T1_5}},Tier 1 Potential Integration #5 Name,Technology name of tier 1 potential integration #5 (by service-account activity),19,Potential Integrations
+{{PI_T1_5_FA}},Tier 1 Potential Integration #5 First Seen,First-added date for tier 1 potential integration #5,19,Potential Integrations
+{{PI_T1_5_LA}},Tier 1 Potential Integration #5 Last Seen,Latest-added date for tier 1 potential integration #5,19,Potential Integrations
+{{PI_T1_5_SA}},Tier 1 Potential Integration #5 Service Accounts,Service-account count for tier 1 potential integration #5,19,Potential Integrations
+{{PI_T1_6}},Tier 1 Potential Integration #6 Name,Technology name of tier 1 potential integration #6 (by service-account activity),19,Potential Integrations
+{{PI_T1_6_FA}},Tier 1 Potential Integration #6 First Seen,First-added date for tier 1 potential integration #6,19,Potential Integrations
+{{PI_T1_6_LA}},Tier 1 Potential Integration #6 Last Seen,Latest-added date for tier 1 potential integration #6,19,Potential Integrations
+{{PI_T1_6_SA}},Tier 1 Potential Integration #6 Service Accounts,Service-account count for tier 1 potential integration #6,19,Potential Integrations
+{{PI_T1_7}},Tier 1 Potential Integration #7 Name,Technology name of tier 1 potential integration #7 (by service-account activity),19,Potential Integrations
+{{PI_T1_7_FA}},Tier 1 Potential Integration #7 First Seen,First-added date for tier 1 potential integration #7,19,Potential Integrations
+{{PI_T1_7_LA}},Tier 1 Potential Integration #7 Last Seen,Latest-added date for tier 1 potential integration #7,19,Potential Integrations
+{{PI_T1_7_SA}},Tier 1 Potential Integration #7 Service Accounts,Service-account count for tier 1 potential integration #7,19,Potential Integrations
+{{PI_T1_8}},Tier 1 Potential Integration #8 Name,Technology name of tier 1 potential integration #8 (by service-account activity),19,Potential Integrations
+{{PI_T1_8_FA}},Tier 1 Potential Integration #8 First Seen,First-added date for tier 1 potential integration #8,19,Potential Integrations
+{{PI_T1_8_LA}},Tier 1 Potential Integration #8 Last Seen,Latest-added date for tier 1 potential integration #8,19,Potential Integrations
+{{PI_T1_8_SA}},Tier 1 Potential Integration #8 Service Accounts,Service-account count for tier 1 potential integration #8,19,Potential Integrations
+{{PI_T2_1}},Tier 2 Potential Integration #1 Name,Technology name of tier 2 potential integration #1 (by service-account activity),19,Potential Integrations
+{{PI_T2_1_FA}},Tier 2 Potential Integration #1 First Seen,First-added date for tier 2 potential integration #1,19,Potential Integrations
+{{PI_T2_1_LA}},Tier 2 Potential Integration #1 Last Seen,Latest-added date for tier 2 potential integration #1,19,Potential Integrations
+{{PI_T2_1_SA}},Tier 2 Potential Integration #1 Service Accounts,Service-account count for tier 2 potential integration #1,19,Potential Integrations
+{{PI_T2_2}},Tier 2 Potential Integration #2 Name,Technology name of tier 2 potential integration #2 (by service-account activity),19,Potential Integrations
+{{PI_T2_2_FA}},Tier 2 Potential Integration #2 First Seen,First-added date for tier 2 potential integration #2,19,Potential Integrations
+{{PI_T2_2_LA}},Tier 2 Potential Integration #2 Last Seen,Latest-added date for tier 2 potential integration #2,19,Potential Integrations
+{{PI_T2_2_SA}},Tier 2 Potential Integration #2 Service Accounts,Service-account count for tier 2 potential integration #2,19,Potential Integrations
+{{PI_T2_3}},Tier 2 Potential Integration #3 Name,Technology name of tier 2 potential integration #3 (by service-account activity),19,Potential Integrations
+{{PI_T2_3_FA}},Tier 2 Potential Integration #3 First Seen,First-added date for tier 2 potential integration #3,19,Potential Integrations
+{{PI_T2_3_LA}},Tier 2 Potential Integration #3 Last Seen,Latest-added date for tier 2 potential integration #3,19,Potential Integrations
+{{PI_T2_3_SA}},Tier 2 Potential Integration #3 Service Accounts,Service-account count for tier 2 potential integration #3,19,Potential Integrations
+{{PI_T2_4}},Tier 2 Potential Integration #4 Name,Technology name of tier 2 potential integration #4 (by service-account activity),19,Potential Integrations
+{{PI_T2_4_FA}},Tier 2 Potential Integration #4 First Seen,First-added date for tier 2 potential integration #4,19,Potential Integrations
+{{PI_T2_4_LA}},Tier 2 Potential Integration #4 Last Seen,Latest-added date for tier 2 potential integration #4,19,Potential Integrations
+{{PI_T2_4_SA}},Tier 2 Potential Integration #4 Service Accounts,Service-account count for tier 2 potential integration #4,19,Potential Integrations
+{{PI_T2_5}},Tier 2 Potential Integration #5 Name,Technology name of tier 2 potential integration #5 (by service-account activity),19,Potential Integrations
+{{PI_T2_5_FA}},Tier 2 Potential Integration #5 First Seen,First-added date for tier 2 potential integration #5,19,Potential Integrations
+{{PI_T2_5_LA}},Tier 2 Potential Integration #5 Last Seen,Latest-added date for tier 2 potential integration #5,19,Potential Integrations
+{{PI_T2_5_SA}},Tier 2 Potential Integration #5 Service Accounts,Service-account count for tier 2 potential integration #5,19,Potential Integrations
+{{PI_T3_1}},Tier 3 Potential Integration #1 Name,Technology name of tier 3 potential integration #1 (by service-account activity),19,Potential Integrations
+{{PI_T3_1_FA}},Tier 3 Potential Integration #1 First Seen,First-added date for tier 3 potential integration #1,19,Potential Integrations
+{{PI_T3_1_LA}},Tier 3 Potential Integration #1 Last Seen,Latest-added date for tier 3 potential integration #1,19,Potential Integrations
+{{PI_T3_1_SA}},Tier 3 Potential Integration #1 Service Accounts,Service-account count for tier 3 potential integration #1,19,Potential Integrations
+{{PI_T3_2}},Tier 3 Potential Integration #2 Name,Technology name of tier 3 potential integration #2 (by service-account activity),19,Potential Integrations
+{{PI_T3_2_FA}},Tier 3 Potential Integration #2 First Seen,First-added date for tier 3 potential integration #2,19,Potential Integrations
+{{PI_T3_2_LA}},Tier 3 Potential Integration #2 Last Seen,Latest-added date for tier 3 potential integration #2,19,Potential Integrations
+{{PI_T3_2_SA}},Tier 3 Potential Integration #2 Service Accounts,Service-account count for tier 3 potential integration #2,19,Potential Integrations
+{{PI_T3_3}},Tier 3 Potential Integration #3 Name,Technology name of tier 3 potential integration #3 (by service-account activity),19,Potential Integrations
+{{PI_T3_3_FA}},Tier 3 Potential Integration #3 First Seen,First-added date for tier 3 potential integration #3,19,Potential Integrations
+{{PI_T3_3_LA}},Tier 3 Potential Integration #3 Last Seen,Latest-added date for tier 3 potential integration #3,19,Potential Integrations
+{{PI_T3_3_SA}},Tier 3 Potential Integration #3 Service Accounts,Service-account count for tier 3 potential integration #3,19,Potential Integrations
+{{PI_T3_4}},Tier 3 Potential Integration #4 Name,Technology name of tier 3 potential integration #4 (by service-account activity),19,Potential Integrations
+{{PI_T3_4_FA}},Tier 3 Potential Integration #4 First Seen,First-added date for tier 3 potential integration #4,19,Potential Integrations
+{{PI_T3_4_LA}},Tier 3 Potential Integration #4 Last Seen,Latest-added date for tier 3 potential integration #4,19,Potential Integrations
+{{PI_T3_4_SA}},Tier 3 Potential Integration #4 Service Accounts,Service-account count for tier 3 potential integration #4,19,Potential Integrations
+{{PI_T3_5}},Tier 3 Potential Integration #5 Name,Technology name of tier 3 potential integration #5 (by service-account activity),19,Potential Integrations
+{{PI_T3_5_FA}},Tier 3 Potential Integration #5 First Seen,First-added date for tier 3 potential integration #5,19,Potential Integrations
+{{PI_T3_5_LA}},Tier 3 Potential Integration #5 Last Seen,Latest-added date for tier 3 potential integration #5,19,Potential Integrations
+{{PI_T3_5_SA}},Tier 3 Potential Integration #5 Service Accounts,Service-account count for tier 3 potential integration #5,19,Potential Integrations
+{{LU_ADV}},Advanced License Usage,Wiz Advanced workloads used vs licensed quota,4,License Usage
+{{LU_CODE}},Wiz Code License Usage (Developers),Developers consuming the Wiz Code license,4,License Usage
+{{LU_DEFEND}},Wiz Defend License Usage (Ingestion),Wiz Defend ingestion units consumed,4,License Usage
+{{LU_SENSOR}},Wiz Sensor License Usage,Deployed runtime sensor coverage,4,License Usage
+{{WS_TF}},Total Workload Scan Failures,Total failed workload scans across all resource types,5,Workload Scan Failures
+{{WS_S1}},Top Failure Message #1,#1 workload scan failure reason by count,5,Workload Scan Failures
+{{WS_S2}},Top Failure Message #2,#2 workload scan failure reason by count,5,Workload Scan Failures
+{{WS_S3}},Top Failure Message #3,#3 workload scan failure reason by count,5,Workload Scan Failures
