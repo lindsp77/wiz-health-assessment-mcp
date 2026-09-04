@@ -105,6 +105,48 @@ def normalize_status_marks(slide_xml: str) -> str:
     return re.sub(r"<a:r>.*?</a:r>", rebuild, slide_xml, flags=re.S)
 
 
+# --- Split-token normalization ------------------------------------------------
+# PowerPoint's editor routinely splits a {{TOKEN}} across several runs on save
+# (e.g. {{WS_F}} becomes three runs: ': {{WS_' / 'F' / '}}'). When that happens the
+# token-replacement path below can't reproduce the paragraph run-by-run, so it falls
+# back to dumping the whole replaced paragraph into the FIRST run. If that first run
+# is a differently-formatted label — e.g. a hyperlinked heading like "Failed Workload
+# Scans" — the value inherits the wrong formatting (the "linked {{WS_F}}" bug that
+# keeps coming back every time the template is re-saved).
+#
+# This pre-pass runs on the raw slide XML BEFORE parsing and merges any run sequence
+# that a split spread a token across back into a single run, using the rPr of the run
+# where '{{' begins (the token's own run) — so sibling label runs keep their own
+# formatting and the value renders clean. It only merges runs that are directly
+# adjacent (no <a:br/> or other element between them), so line breaks are preserved.
+_SPLIT_RUN_RE = re.compile(r"<a:r>(?P<body>.*?)<a:t>(?P<text>[^<]*)</a:t></a:r>", re.S)
+
+
+def normalize_split_tokens(slide_xml: str) -> str:
+    """Merge adjacent runs that a PowerPoint edit split a ``{{TOKEN}}`` across, so each
+    token lives in a single run again. Idempotent; a slide with no split tokens is
+    returned unchanged."""
+    changed = True
+    while changed:
+        changed = False
+        runs = list(_SPLIT_RUN_RE.finditer(slide_xml))
+        for i, m in enumerate(runs):
+            text = m.group("text")
+            # A token whose '{{' is open but not closed within this run is split.
+            if "{{" in text and "}}" not in text.split("{{", 1)[1]:
+                if i + 1 < len(runs):
+                    nxt = runs[i + 1]
+                    # Only merge truly-adjacent runs (nothing but whitespace between
+                    # them) so we never swallow an <a:br/>, <a:fld/>, etc.
+                    if slide_xml[m.end():nxt.start()].strip() == "":
+                        merged = ("<a:r>" + m.group("body") + "<a:t>"
+                                  + text + nxt.group("text") + "</a:t></a:r>")
+                        slide_xml = slide_xml[:m.start()] + merged + slide_xml[nxt.end():]
+                        changed = True
+                        break
+    return slide_xml
+
+
 def process_pptx_template(
     template_path: str,
     output_path: str,
@@ -185,6 +227,14 @@ def process_pptx_template(
             content = zin.read(item.filename)
 
             if item.filename.startswith("ppt/slides/slide") and item.filename.endswith(".xml"):
+                # Pre-pass: re-join any {{TOKEN}} that a PowerPoint save split across
+                # runs, so replacement keeps each run's own formatting (prevents the
+                # value inheriting a sibling label's hyperlink — the "linked WS_F" bug).
+                _raw = content.decode("utf-8")
+                _joined = normalize_split_tokens(_raw)
+                if _joined != _raw:
+                    content = _joined.encode("utf-8")
+
                 root = ET.fromstring(content)
                 slide_modified = False
 
