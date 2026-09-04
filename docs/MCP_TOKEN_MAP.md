@@ -48,10 +48,19 @@ every call against a live tenant — apply them and the run works first-try (no 
    `name:null` — no way to label them via MCP. → **`Not available via MCP`.**
 9. **`WS_NONOS` / `WS_EXCL`** come from **`get_non_os_disk_scanning_settings`** (in the
    `vulnerabilities` domain), NOT `get_vulnerability_assessment_settings`.
-10. **`OC`/`OH` and the top-control counts need `filter_scope:"LATEST_ISSUE_DETECTION"`.** `list_issues`
-    and `list_issues_grouped` default to `ALL_ISSUE_DETECTIONS`, which massively inflates HIGH counts
-    (validation run showed `OH`≈Nk, `HI_CBC_1`≈Nk). Pass `filter_scope:"LATEST_ISSUE_DETECTION"` for
-    distinct-issue counts on `OC`, `OH`, `CI_CBC_*`, `HI_CBC_*`.
+10. **`filter_scope` lives ONLY on `list_issues`, NOT on `list_issues_grouped`.** `list_issues` accepts
+    `filter_scope:["ALL_ISSUE_DETECTIONS"|"LATEST_ISSUE_DETECTION"]` (default ALL). `list_issues_grouped`
+    has **no such param** — passing it errors (`additionalProperties 'filter_scope' not allowed`), so the
+    grouped top-control counts (`HI_CBC_*`/`CI_CBC_*`) are ALWAYS `ALL_ISSUE_DETECTIONS` and cannot be scoped.
+    ⚠️ **Live-validated 2026-09-04: on this tenant `ALL == LATEST`** — identical totals for both the
+    tenant-wide open-HIGH count and the top rule under either scope. So `OC`/`OH` are **not** scope-inflated,
+    and a large `HI_CBC_1` is a **real** count, not an artifact: here a single broad custom toxic-combination
+    rule accounts for ~89% of all open HIGH. **Do NOT report `HI_CBC_1` as "inflated by scope."** (An earlier
+    note claimed LATEST vs ALL diverges; that was not reproducible on 2026-09-04 — treat scope divergence as
+    tenant/version-specific, not assumed.) **If a future tenant does diverge:** rank rule IDs via
+    `list_issues_grouped{group_by:"SOURCE_RULE"}`, then re-count each with
+    `list_issues{source_rule_id:[id], severity, status, filter_scope:"LATEST_ISSUE_DETECTION"}.totalCount`
+    (only `list_issues` carries the scope) — that yields per-rule LATEST counts comparable to `OC`/`OH`.
 11. **`C_OTH`**: prefer the **direct** filtered call (sum of non-AWS/Azure/GCP providers) over the
     subtraction formula — the two disagreed (N vs N) because `CON_EN`/total counts connectors
     differently than provider sums. Compute `C_OTH` and `C_OTH_NAMES` from explicit provider filters.
@@ -185,6 +194,9 @@ Reads `viewerV2.tenant.licenses[]` (each: `name`, `sku`, `status`, `startAt`, `e
 
 ### 9. `list_issues_grouped` {group_by:"SOURCE_RULE", type:["CLOUD_CONFIGURATION","TOXIC_COMBINATION"], fetchIssues:false, fetchSecurityScoreImpact:false, first:3} · issues · [LIVE-schema]
 Call once with `severity:["CRITICAL"]`, once with `severity:["HIGH"]`. Nodes ranked by count.
+Counts are always `ALL_ISSUE_DETECTIONS` (this tool has no `filter_scope` — see correction #10); a very
+large `HI_CBC_1` is usually one broad custom rule, NOT a scope inflation — report it as-is.
+Resolve each node's rule name via `list_controls{search:"<rule id>"}` (grouped returns only `id`, see #7).
 | Token | Source |
 |---|---|
 | `CI_CONTROL_1..3` | crit call `nodes[0..2].name` |
