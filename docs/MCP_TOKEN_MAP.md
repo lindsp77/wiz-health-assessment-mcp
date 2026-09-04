@@ -290,7 +290,7 @@ Uncapped scan counts — bypasses the Nk Security-Graph cap (fixes large-tenant 
 | Token | Source |
 |---|---|
 | `F_MM` | count of custom (builtin:false) monitored metrics |
-| `F_BE` | `list_monitored_metrics{metric_types:["BROWSER_EXTENSION_ACTIVE_USER_COUNT"]}` value |
+| `F_BE` | **N/A** — deck wants distinct browser-ext *users*; the `BROWSER_EXTENSION_ACTIVE_USER_COUNT` metric is empty/unreliable and the audit-log performer path needs `admin:audit`. Mark `Not available via MCP`. |
 | `F_FW` | `list_compliance_frameworks` count |
 
 ### 23. Slide-4 validation recoveries · [LIVE, 2026-09-03]
@@ -360,7 +360,14 @@ combined query and likely needs re-checking per-severity too.**
 - `R_TOT` (container registries) = **no clean MCP source.** Graph `CONTAINER_REGISTRY` overcounts (~N; AWS ECR
   is modeled per-repository). `list_container_images_grouped{group_by:["CONTAINER_REGISTRY"]}.totalCount` gives
   ~N registries-with-images (closer to the page's N but not exact). → `Not available via MCP` unless a
-  registries-with-images proxy is acceptable. Same caveat applies to the slide-15 `R_*`/`RC_*` ladder.
+  registries-with-images proxy is acceptable.
+  **BUT the `R_1..6`/`RC_1..6` TYPE LADDER DOES populate — do NOT leave it N/A** (live-validated 2026-09-04):
+  `list_cloud_resources_grouped{type_equals:["CONTAINER_REGISTRY"], group_by:["NATIVE_TYPE"], first:8}` →
+  top nodes ranked by count. `R_n` = friendly name of `nativeType` (map: `containerRegistry`→ECR,
+  `artifactregistry#repository`→GAR, `Microsoft.ContainerRegistry/registries`→ACR,
+  `publicContainerRegistry`→ECR Public, `ghcrContainerRegistry`→GHCR, `container#registry`→GCR);
+  `RC_n` = `analytics.resources.count`. Caveat: counts are repo-level (AWS ECR modeled per-repo, so its
+  count is inflated) — fine for the *ranking/breakdown* the ladder shows; only the R_TOT **total** is unreliable.
 
 ### 24. Per-status scan splits via `execute_graph_query` · [LIVE, slide-5 validation, 2026-09-03] ⭐
 The big recovery: `SECURITY_TOOL_SCAN` entities carry `status`, `scannedResourceType`, and
@@ -423,7 +430,7 @@ forecast), today's point is partial, and payloads are N-248KB (jq the `dataPoint
 | `CL_ASMP` | `100%` if Advanced ASM active (Red Agent findings exist → advanced ASM on), else 0 |
 | `CL_SUP` | `100%` if SaaS connectors exist (`list_subscriptions{cloud_provider:["Microsoft365","Okta","Salesforce","GoogleWorkspace","Slack","MongoDBAtlas"]}` totalCount>0), else `0%` |
 | `CON_WOS` | derived estimate = `SENSOR_COVERAGE_PERCENTAGE × averageComputeWorkloadCount` (e.g. 7% × N ≈ N) — flag as estimate |
-| `F_BE` | `BROWSER_EXTENSION_ACTIVE_USER_COUNT` metric (empty result ⇒ 0 active users) |
+| `F_BE` | **N/A** — distinct-user count not cleanly available (metric empty/unreliable; audit path needs `admin:audit`). Mark `Not available via MCP`. |
 | `F_DR` | discovery is *active* (`list_service_catalog` services carry `promotedBy` discovery rules) but the rule COUNT isn't exposed → leave N/A or report "active" |
 
 ### 27. Agent enablement via FUNCTIONAL PROBES (`F_GA`/`F_BA`/`F_RA`) · [LIVE, 2026-09-03] ⭐
@@ -455,11 +462,11 @@ tokens each — short-circuit at the first hit and return only a boolean.**
 | `U_TOT` | `settings.list_users{status:["DELETED"]}` → `totalCount` (non-deleted portal users, e.g. N) |
 | `U_ENG` | derived: `U_ACT / U_TOT` (e.g. N/N = N%) |
 | `F_AR` / `F_WF` | `automation.list_automation_rules{enabled:true}` vs `{enabled:false}` → "on / off" (e.g. N / N) |
-| `F_WMCP` | `success.list_integrations{type:["WIZ_MCP"]}` → `totalCount` (Wiz MCP integrations, e.g. N) |
+| `F_WMCP` | **N/A** — `list_integrations{type:["WIZ_MCP"]}` counts *integrations*, not distinct MCP *users* (the deck metric); no performer aggregate exists. Mark `Not available via MCP`. |
 | `F_PP` | `issues.list_controls{created_by:["USER"]}` → `totalCount` (user-created policies, e.g. N) |
 | `F_RA` | "Enabled" if Red Agent active (`RA_DAST`>0) |
 | `IA_1..N` | `success.list_integrations` node names — **names only; no activity date** |
-| `F_BE` | `list_monitored_metrics{metric_types:["BROWSER_EXTENSION_ACTIVE_USER_COUNT"]}` (metric exists; value may be empty/0) |
+| `F_BE` | **N/A** — see `F_BE` above: distinct-user metric not cleanly available. Mark `Not available via MCP`. |
 
 Still NA on this tenant: `IR_1..N` (integration last-activity dates — not exposed), `F_BA`/`F_GA`
 (Blue/Green agent enablement), `F_IR` (inventory mgmt rules), `F_DR` (discovery rules),
