@@ -134,18 +134,21 @@ query WhaGap1SettingsConfigInventory {
   regConn: containerRegistries(first: 1, filterBy: {scanningConfigurationType: [CONNECTOR], hasDeployment: true}) { totalCount }
   regCust: containerRegistries(first: 1, filterBy: {scanningConfigurationType: [CUSTOM],    hasDeployment: true}) { totalCount }
 
-  # ===== K. Connectors WITH vs WITHOUT cloud events (CON_WE / CON_NE) ⚠️ =====
-  # first:100 covers most tenants; if pageInfo.hasNextPage, re-run paging on endCursor and sum.
-  connectors(first: 100) {                          # ⚠️ confirm root name (connectors / cloudAccountLinks)
+  # ===== K. Connectors WITH vs WITHOUT cloud events (CON_WE / CON_NE) — ✅ signal, ⚠️ root =====
+  # Live-validated 2026-09-04: a connector HAS cloud events when its modules[] contains "EVENT_SCANNER"
+  # (per-connector detail via the MCP get_connector: config.auditLogMonitorEnabled == true). The MCP
+  # reaches connectors via list_deployments but caps at 20 nodes (totalCount can be in the hundreds) —
+  # so aggregate here: page on endCursor and count nodes whose modules include EVENT_SCANNER.
+  connectors(first: 100) {                          # ⚠️ confirm raw root name (connectors / deployments)
     totalCount
-    nodes { id name cloudEventsEnabled modules { name enabled } }   # ⚠️ confirm cloudEventsEnabled
+    nodes { id name modules }                       # CON_WE = modules includes "EVENT_SCANNER"; CON_NE = the rest
     pageInfo { hasNextPage endCursor }
   }
 
-  # ===== L. Workloads with the Wiz runtime sensor (CON_WOS) ⚠️ =====
+  # ===== L. Workloads with the Wiz runtime sensor (CON_WOS) — ✅ property live-validated 2026-09-04 =====
   sensorWorkloads: graphSearch(first: 1, projectId: "*", quick: true, query: {
     type: [VIRTUAL_MACHINE, CONTAINER, SERVERLESS], select: true,
-    where: { hasWizSensor: {EQUALS: true} }         # ⚠️ confirm property name (sensor* / wizSensor*)
+    where: { deploymentCoverage_sensor_installed: {EQUALS: true} }   # ✅ confirmed property name
   }) { totalCount }
 }
 ```
@@ -173,7 +176,7 @@ query WhaGap1SettingsConfigInventory {
 | `drTotal.totalCount` | `F_DR` | count |
 | `imgLifecycle.nodes[lifecycleStage=="CODE"].analytics.resources.count` | `CL_CODE` | count (other nodes → `CL_CLD/STR/RT/BLD/DEP`) |
 | `regAuto/regConn/regCust.totalCount` | `R_AUT` / `R_CON` / `R_CUS` | count |
-| connectors with `cloudEventsEnabled==true` vs `false` | `CON_WE` / `CON_NE` | count (page + sum) |
+| connectors whose `modules` includes `"EVENT_SCANNER"` vs not | `CON_WE` / `CON_NE` | count (page + sum) |
 | `sensorWorkloads.totalCount` | `CON_WOS` | count |
 
 > **If a `⚠️` alias errors,** delete just that alias and re-run — the rest still return (GraphQL
@@ -319,7 +322,8 @@ Skip this and those fields render blank/`0` — tier counts + SA totals still re
 ## Q5 — Feature-adoption users  ⚠️  *(optional, permission-gated)*
 
 Distinct users of the **Browser Extension** (`F_BE`) and **Wiz MCP** (`F_WMCP`) — unique performers,
-not seat count. Only path is the audit log (needs `admin:audit_logs`; `read:all` often 403s).
+not seat count. Only path is the audit log — **live-validated 2026-09-04: requires `admin:audit` (or
+`admin:all`); a `read:all` token is denied** (`UNAUTHORIZED`). Without that scope, both stay **N/A**.
 
 ```graphql
 query WhaGap5AdoptionUsers($after: String, $since: DateTime!) {
@@ -355,11 +359,11 @@ on Wiz-MCP actions. 403 or unclassifiable → both stay **N/A** (gap M).
    still marked `Not available via MCP` from the response.
 3. Paste **Q2** with the date variables (regenerate them via the console snippet), run, fill slide-12 tokens.
 4. Paste **Q3** (+ **Q4** if you want the timeline), roll up into `PI_*`.
-5. **Q5** only if you have `admin:audit_logs`.
+5. **Q5** only if you have `admin:audit`.
 6. Re-render: `python3 render_deck.py --input-csv <csv> --format pptx --customer "<Name>"`. Unfilled
    cells stay **N/A** — the honest state for a genuine gap.
 
-**Scope:** `read:all` covers Q1–Q4; Q5 needs `admin:audit_logs`. No service account required.
+**Scope:** `read:all` covers Q1–Q4; Q5 needs `admin:audit`. No service account required.
 
 ---
 
